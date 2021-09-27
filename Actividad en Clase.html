@@ -1,0 +1,61 @@
+<canvas id='tablero' width=650 height=450></canvas>
+<script>
+    function hexagono(cd,colorBorde,colorRelleno,grosorLinea){
+    ctx.beginPath();
+    ctx.strokeStyle = colorBorde;
+    ctx.fillStyle = colorRelleno;
+    ctx.lineWidth = grosorLinea;
+    ctx.moveTo(cd[0],cd[1]);
+    ctx.lineTo(cd[2],cd[3]);
+    ctx.lineTo(cd[4],cd[5]);
+    ctx.lineTo(cd[6],cd[7]);
+    ctx.lineTo(cd[8],cd[9]);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    }
+
+    function circulo(cx,cy,radio,colorBorde,colorRelleno,grosorLinea){
+    ctx.beginPath();
+    ctx.strokeStyle='colorBorde'
+    ctx.fillStyle = colorRelleno;
+    ctx.lineWidth = grosorLinea;
+    ctx.arc(cx, cy, radio, 0, 2 * Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill()
+    }
+
+    function rectangulo(cd,colorBorde,colorRelleno,grosorLinea){
+    ctx.beginPath();
+    ctx.strokeStyle = colorBorde;
+    ctx.fillStyle = colorRelleno;
+    ctx.lineWidth = grosorLinea;
+    ctx.moveTo(cd[0],cd[1]);
+    ctx.lineTo(cd[2],cd[3]);
+    ctx.lineTo(cd[4],cd[5]);
+    ctx.lineTo(cd[6],cd[7]);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+    }
+
+    function recorte(arr){
+    ctx.beginPath();
+    ctx.moveTo(arr[0],arr[1]);
+    ctx.lineTo(arr[2],arr[3]);
+    ctx.lineTo(arr[4],arr[5]);
+    ctx.lineTo(arr[6],arr[7]);
+    ctx.clip();
+    }
+
+    var c = document.getElementById('tablero')
+    var ctx = c.getContext('2d')
+ 
+    var arrh1 = [383,11,592,143,513,361,252,359,174,145];
+    var arrh2 = [339,75,469,158,420,297,257,298,207,158];
+
+    hexagono(arrh1,'rgba(0,162,232)','rgba(0,162,232)');
+    hexagono(arrh2,'rgba(255,255,255)','rgba(255,255,255)');
+    
+</script>

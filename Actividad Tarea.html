@@ -1,0 +1,22 @@
+<canvas id='tablero' width=950 height=450></canvas>
+<script>
+  function circulo(cx,cy,radio,colorBorde,colorRelleno,grosorLinea){
+  ctx.beginPath();
+  ctx.strokeStyle='colorBorde'
+  ctx.fillStyle = colorRelleno;
+  ctx.lineWidth = grosorLinea;
+  ctx.arc(cx, cy, radio, 0, 2 * Math.PI);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill()
+  }
+
+  var c = document.getElementById('tablero')
+  var ctx = c.getContext('2d')
+
+  var arrc1 = [421,183,150];
+
+  circulo(421,183,150,'rgba(0,0,0)','rgba(239,228,176)');
+
+
+</script>
