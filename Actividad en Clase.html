@@ -40,12 +40,9 @@
     ctx.fill();
     }
 
-    function recorte(arr){
+    function recorte(cx,cy,radio){
     ctx.beginPath();
-    ctx.moveTo(arr[0],arr[1]);
-    ctx.lineTo(arr[2],arr[3]);
-    ctx.lineTo(arr[4],arr[5]);
-    ctx.lineTo(arr[6],arr[7]);
+    ctx.arc(cx, cy, radio, 0, 2 * Math.PI);
     ctx.clip();
     }
 
@@ -54,8 +51,17 @@
  
     var arrh1 = [383,11,592,143,513,361,252,359,174,145];
     var arrh2 = [339,75,469,158,420,297,257,298,207,158];
+    var arrr1 = [25,144,18,192,596,284,600,235];
+    var arrr2 = [172,144,206,157,256,299,252,361];
 
     hexagono(arrh1,'rgba(0,162,232)','rgba(0,162,232)');
     hexagono(arrh2,'rgba(255,255,255)','rgba(255,255,255)');
-    
+    rectangulo(arrr1,'rgba(181,230,29)','rgba(181,230,29)');
+    circulo(184,157,132,'rgba(237,28,36)','rgba(237,28,36)');
+    circulo(221,164,85,'rgba(255,255,255)','rgba(255,255,255)');
+    recorte(221,164,85);
+    hexagono(arrh1,'rgba(0,162,232)','rgba(0,162,232)');
+    hexagono(arrh2,'rgba(255,255,255)','rgba(255,255,255)');
+    rectangulo(arrr1,'rgba(181,230,29)','rgba(181,230,29)');
+
 </script>
