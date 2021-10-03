@@ -35,6 +35,25 @@ function poligono(cd,colorBorde,colorRelleno,grosorLinea){
   ctx.lineTo(cd[4],cd[5]);
   ctx.lineTo(cd[6],cd[7]);
   ctx.lineTo(cd[8],cd[9]);
+  ctx.lineTo(cd[10],cd[11]);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+  }
+
+function estrella(cd,colorBorde,colorRelleno,grosorLinea){
+  ctx.beginPath();
+  ctx.strokeStyle = colorBorde;
+  ctx.fillStyle = colorRelleno;
+  ctx.lineWidth = grosorLinea;
+  ctx.moveTo(cd[0],cd[1]);
+  ctx.lineTo(cd[2],cd[3]);
+  ctx.lineTo(cd[4],cd[5]);
+  ctx.lineTo(cd[6],cd[7]);
+  ctx.lineTo(cd[8],cd[9]);
+  ctx.lineTo(cd[10],cd[11]);
+  ctx.lineTo(cd[12],cd[13]);
+  ctx.lineTo(cd[14],cd[15]);
   ctx.closePath();
   ctx.stroke();
   ctx.fill();
@@ -51,13 +70,27 @@ function poligono(cd,colorBorde,colorRelleno,grosorLinea){
 
   var arrr1 = [166,81,166,143,645,143,645,81];
   var arrp1 = [166,81,166,143,421,277,645,143,645,81,421,184];
+  var arrf1 = [166,81,378,150,386,114,421,182,364,216,370,193];
+  var arrf2 = [649,81,474,150,468,114,421,182,481,216,476,193];
+  var arre = [420,197,426,223,450,231,426,239,420,265,413,239,392,231,414,223];
+  var arrr2 = [404,81,404,143,645,143,645,81];
 
   rectangulo(arrr1,'rgba(162,13,20)','rgba(237,28,36)',5);
   circulo(421,183,150,'rgba(0,0,0)','rgba(239,228,176)',5);
   circulo(421,183,110,'rgba(0,0,0)','rgba(255,255,255)',5);
-  poligono(arrp1,'rgba(0,162,232)','rgba(0,162,232)');
-  recorte(421,183,110);
+  poligono(arrp1,'rgba(136,0,21)','rgba(162,13,20)',5);
+  poligono(arrf1,'rgba(142,156,157)','rgba(183,137,117)',5);
+  poligono(arrf2,'rgba(183,137,117)','rgba(142,156,157)',5);
+  estrella(arre,'rgba(171,157,80)','rgba(255,201,14)',5);
+  recorte(421,183,155)
+  rectangulo(arrr2,'rgba(162,13,20)','rgba(237,28,36)',5);
+  poligono(arrp1,'rgba(136,0,21)','rgba(162,13,20)',5);
+  poligono(arrf1,'rgba(142,156,157)','rgba(183,137,117)',5);
+  poligono(arrf2,'rgba(183,137,117)','rgba(142,156,157)',5);
+  recorte(421,183,110)
   rectangulo(arrr1,'rgba(162,13,20)','rgba(237,28,36)',5);
-
-
+  poligono(arrp1,'rgba(136,0,21)','rgba(162,13,20)',5);
+  poligono(arrf1,'rgba(142,156,157)','rgba(183,137,117)',5);
+  poligono(arrf2,'rgba(183,137,117)','rgba(142,156,157)',5);
+  estrella(arre,'rgba(171,157,80)','rgba(255,201,14)',5);
 </script>
